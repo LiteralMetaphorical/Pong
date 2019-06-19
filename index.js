@@ -1,6 +1,5 @@
 //create canvas
 let canvas = document.getElementById("canvas");
-console.log(canvas);
 canvas.focus();
 let context = canvas.getContext("2d");
 let canvasWidth = 600;
