@@ -109,17 +109,6 @@ function draw() {
   if (running === 0) {
     return;
   }
-  /*if (Math.abs(angle) % 90 === 0) {
-    if (ballXDir === 0 && ballYDir === 0) {
-      angle+=10;
-    } else if (ballXDir === 0 && ballYDir === 1) {
-      angle-=10;
-    } else if (ballXDir === 1 && ballYDir === 0) {
-      angle-=10;
-    } else if (ballXDir === 1 && ballYDir === 1) {
-      angle+=10;
-    }
-  }*/
   let radians = angle*Math.PI/180;
   let xunits = Math.cos(radians) * speed;
   let yunits = Math.sin(radians) * speed;
