@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="winDiv">
+    <h1 id="winText"></h1>
+    <h3 onclick="reset()" id="reset">RESTART (R)</h3>
+  </div>
+  <div id="startDiv">
+    <h1 onclick="newGame()" id="startText">START GAME (F)</h1>
+  </div>
+  <audio id="player1boop" src="https://freesound.org/data/previews/170/170142_2578041-lq.mp3" type="audio/mp3"></audio>
+  <audio id="player2boop" src="https://freesound.org/data/previews/170/170143_2578041-lq.mp3" type="audio/mp3"></audio>
+  <audio id="winboop" src="https://freesound.org/data/previews/456/456966_6456158-lq.mp3"></audio>
+  <audio id="pop" src="https://freesound.org/data/previews/411/411639_5121236-lq.mp3"></audio>
+</body>
+<script src="index.js"></script>
