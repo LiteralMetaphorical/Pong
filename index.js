@@ -137,8 +137,8 @@ function draw() {
   let rightpixel = context.getImageData(ballX+11, ballY, 1, 1);
   let leftpixel = context.getImageData(ballX-11, ballY, 1, 1);
   if (rightpixel.data[3] === 255 && ballXDir === 1) {
-    ballXDir = 0;
-    player1boop.play();
+    ballXDir = 0; //reverse ball X direction when ball hits paddle
+    player1boop.play(); //play sound on contact with paddle
     let dif = Math.round(Math.abs(ballY - block2[1]));
     //console.log(dif, angle);
     if (dif <= 10 && dif > 0) {
@@ -160,8 +160,8 @@ function draw() {
     }
   }
   if (leftpixel.data[3] === 255 && ballXDir === 0) {
-    ballXDir = 1;
-    player2boop.play();
+    ballXDir = 1; //reverse ball X direction when ball hits paddle
+    player2boop.play(); //play sound on contact with paddle
     let dif = Math.round(Math.abs(ballY - block1[1]));
     console.log(dif, angle);
     if (dif <= 10 && dif > 0) {
@@ -180,6 +180,7 @@ function draw() {
       angle-=30;
     }
   }
+  //determine ball direction
   if (ballYDir === 1) {
     ballY-=yunits;
   } else {
@@ -198,6 +199,7 @@ function draw() {
     angle = -angle;
     pop.play();
   }
+  //detect win state
   if (ballX >= canvas.width-10) {
     win("Player 1");
   }
@@ -206,6 +208,7 @@ function draw() {
   }
 }
 
+//stop game when win state is reached by either player
 function win(player) {
   winDiv.style.display = "flex";
   winText.innerHTML = `${player} wins!`;
@@ -227,5 +230,3 @@ function reset() {
   winDiv.style.display = "none";
   newGame();
 }
-
-//newGame();
